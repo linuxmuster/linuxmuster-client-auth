@@ -35,16 +35,6 @@ case "$1" in
         binpath=bin
         cups=cupsys
 
-        # sets hostname for dhclient at boot time
-        update-rc.d linuxmuster-hostname start 40 S .
-
-        # adding system groups plugdev and nvram
-        for i in plugdev nvram; do
-            if ! grep -q ^${i}: /etc/group; then
-                addgroup --system $i
-            fi
-        done
-
         # adding administrator and pgmadmin to sudoers
         if [ -e /etc/sudoers ]; then
             for admin in $ADMINISTRATOR $PGMADMIN; do
@@ -57,25 +47,47 @@ case "$1" in
             done
         fi
 
-        # adding cupsys user to shadow group
-       # if id cupsys &> /dev/null; then
-       #     if ! id cupsys | grep -qw shadow; then
-       #         addgroup cupsys shadow
-       #     fi
-       # fi
+        # configure package
+        PRIORITY="critical"
+        db_title "linuxmuster-client-auth Konfiguration"
 
-        # adding printoperators group to cups system groups
-        #if grep -q ^SystemGroup /etc/cups/cupsd.conf; then
-        #    if ! grep ^SystemGroup /etc/cups/cupsd.conf | grep -q $PRINTERADMINS; then
-        #        echo "Adding group $PRINTERADMINS to cupsd system groups ..."
-        #        cp /etc/cups/cupsd.conf /etc/cups/cupsd.conf.dpkg-old
-        #        sed -e "s/^SystemGroup.*/SystemGroup lpadmin $PRINTERADMINS/" /etc/cups/cupsd.conf.dpkg-old > /etc/cups/cupsd.conf
-        #        /etc/init.d/$cups restart
-         #   fi
-        #fi
+        # ldap server uri
+        db_get ldap-auth-config/ldapns/ldap-server || true
+        URI=$RET
+        IP=$(echo $URI \
+            | sed 's/\([0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\).*/_\1/' \
+            | sed 's/.*_//' \
+            | sed -n 's/\([0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\)/\1/p' \
+            )
+        if [ -n "$IP" ]; then
+            db_set shared/ldapns/ldap-server $IP || true
+        fi
+        while [ -z "$IP_NEW" ]; do
+              db_input $PRIORITY shared/ldapns/ldap-server || true
+              db_go || true
+              db_get shared/ldapns/ldap-server || true
+              IP_NEW=$RET
+        done
+        URI_NEW=ldap://$IP_NEW/
+        if [ "$URI" != "$URI_NEW" ]; then
+         db_set ldap-auth-config/ldapns/ldap-server $URI_NEW || true
+        fi
 
-  # configure package
-  . /usr/share/linuxmuster-client/configure
+        # ldap basedn
+        db_get ldap-auth-config/ldapns/base-dn || true
+        BASEDN=$RET
+        if [ -n "$BASEDN" ]; then
+         db_set shared/ldapns/base-dn $BASEDN || true
+        fi
+        while [ -z "$BASEDN_NEW" ]; do
+          db_input $PRIORITY shared/ldapns/base-dn || true
+          db_go || true
+          db_get shared/ldapns/base-dn || true
+          BASEDN_NEW=$RET
+        done
+        if [ "$BASEDN" != "$BASEDN_NEW" ]; then
+         db_set ldap-auth-config/ldapns/base-dn $BASEDN_NEW || true
+        fi
 
         # basedn
         db_get shared/ldapns/ldap-server || true
@@ -85,7 +97,7 @@ case "$1" in
             exit 0
         fi
 
-  # serverip
+        # serverip
         db_get shared/ldapns/base-dn || true
         basedn=$RET
         if [ -z "$basedn" ]; then
