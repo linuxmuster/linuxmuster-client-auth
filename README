@@ -7,4 +7,5 @@ on the "Linux Musterlösung".
   * The ldap users "pgmadmin" and "administrator" have
     administrative rights via sudo
   * Homedirs of ldap users ar created on the fly via pam_mkuserdir.so
+    from /etc/skel
   * This package has no profile managing capabilities
