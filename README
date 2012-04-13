@@ -9,3 +9,8 @@ on the "Linux Musterlösung".
   * Homedirs of ldap users ar created on the fly via pam_mkuserdir.so
     from /etc/skel
   * This package has no profile managing capabilities
+
+Tested on
+
+  * Ubuntu 12.04LTS beta2
+  * Linux Mint 12 "Lisa" (based on ubuntu 11.10)
