@@ -1,0 +1,13 @@
+# linuxmuster-client-auth package specific variables
+# don't change this, it will be overwritten by package upgrade
+# R. Rössler <roesslerrr@web.de>
+# F. Schiebel <frank@linuxmuster.net>
+# 13.04.2012
+
+# When AUTOCONFIGURE_LDAP="YES" (uppercase!)
+# then the package tries to determie basedn and
+# ldap serverip at boot-time automagically...
+AUTOCONFIGURE_LDAP="YES"
+# User settings
+ADMINISTRATOR="administrator"
+PGMADMIN="pgmadmin"
