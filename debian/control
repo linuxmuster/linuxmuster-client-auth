@@ -1,0 +1,14 @@
+Source: linuxmuster-client-auth
+Section: debian-linuxmuster
+Priority: optional
+Maintainer: Frank Schiebel <frank@linuxmuster.net>
+Build-Depends: debhelper (>= 4.0.0)
+Standards-Version: 3.6.0
+
+Package: linuxmuster-client-auth
+Architecture: all
+Conflicts: linuxmuster-clientconfig, linuxmuster-base, ivman
+Replaces: ivman
+Depends: ${shlibs:Depends}, ${misc:Depends}, libpam-ldap, libnss-ldap, nscd, libpam-mount, rsync, smbfs
+Description: Linux-Musterloesung client configuration for auth only
+

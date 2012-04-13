@@ -1,0 +1,3 @@
+etc/*                                /etc/
+usr/share/linuxmuster-client/*              /usr/share/linuxmuster-client/
+var/lib/linuxmuster-client/templates/*      /var/lib/linuxmuster-client/templates/

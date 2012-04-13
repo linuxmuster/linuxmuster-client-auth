@@ -1,0 +1,35 @@
+Template: shared/ldapns/ldap-server
+Type: string
+Default: 10.16.1.1
+_Description: LDAP Server host.
+ The address of the LDAP server used.
+ Note: It is always a good idea to use an IP address, it reduces risks of failure.
+
+Template: shared/ldapns/base-dn
+Type: string
+Default: dc=linuxmuster,dc=local
+_Description: The distinguished name of the search base.
+
+Template: linuxmuster-client/template_user
+Type: string
+Default: linuxadmin
+_Description: Login name of template user.
+ Template user from who certain profile directories were copied to the user's home.
+
+Template: linuxmuster-client/firefox
+Type: boolean
+Default: false
+_Description: Copy initial Firefox profile to user's home?
+
+Template: linuxmuster-client/myfiles
+Type: string
+Default: Eigene Dateien
+_Description: Name of the folder which contains the user files.
+ Folder will be created in user's home if it does not exist and linked to the desktop.
+
+Template: linuxmuster-client/apps_basedir
+Type: string
+Default: Einstellungen
+_Description: Name of the folder in user's home which will contain the application settings (Firefox etc.).
+ Folder will be created in user's home if it does not exist.
+
