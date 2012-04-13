@@ -29,7 +29,7 @@ case "$1" in
     configure)
 
         # read default variables
-        . /usr/share/linuxmuster-client/config || exit 1
+        . /etc/linuxmuster-client-auth/config || exit 1
 
         # check the distribution and do specific stuff
         binpath=bin
@@ -105,109 +105,23 @@ case "$1" in
             exit 0
         fi
 
-  # template user
-  db_get linuxmuster-client/template_user || true
-  template_user=$RET
-
-  # firefox profile from template user?
-  db_get linuxmuster-client/firefox || true
-  if $RET; then firefox=yes; else firefox=no; fi
-
-  # my files folder
-  db_get linuxmuster-client/myfiles || true
-  myfiles="$RET"
-
-  # apps base dir
-  db_get linuxmuster-client/apps_basedir || true
-  apps_basedir="$RET"
-
         # patching configuration files
         echo "Patching configuration ..."
         cd /var/lib/linuxmuster-client/templates
             find -type f | xargs -i -t sh -c \
-            "sed -e 's%@@studentshome@@%${STUDENTSHOME}%g
-                            s%@@sharehome@@%${SHAREHOME}%g
-                            s%@@progsdir@@%${PROGSDIR}%g
-                            s%@@cdsdir@@%${CDSDIR}%g
-                            s%@@taskscache@@%${TASKSCACHE}%g
-                            s%@@backupmntpoint@@%${BACKUPMNTPOINT}%g
-                            s%@@basedn@@%${basedn}%g
-                            s%@@binpath@@%${binpath}%g
-                            s%@@administrator@@%${ADMINISTRATOR}%g
-                            s%@@pgmadmin@@%${PGMADMIN}%g
-                            s%@@serverip@@%${serverip}%g' {} > /{}" 2> /dev/null 1> /dev/null
+            "sed -e 's%@@basedn@@%${basedn}%g
+                     s%@@administrator@@%${ADMINISTRATOR}%g
+                     s%@@pgmadmin@@%${PGMADMIN}%g
+                     s%@@serverip@@%${serverip}%g' {} > /{}" 2> /dev/null 1> /dev/null
             cd ../../
 
-  # patch package configfile
-     [ -e $USERCONFIG ] && cp $USERCONFIG $USERCONFIG.dpkg-old
-     if grep -q ^TEMPLATE_USER $USERCONFIG; then
-         sed -e "s|^TEMPLATE_USER=.*|TEMPLATE_USER=$template_user|" -i $USERCONFIG
-     else
-         echo "TEMPLATE_USER=$template_user" > $USERCONFIG
-     fi
-    if grep -q ^FIREFOX $USERCONFIG; then
-         sed -e "s|^FIREFOX=.*|FIREFOX=$firefox|" -i $USERCONFIG
-     else
-         echo "FIREFOX=$firefox" >> $USERCONFIG
-    fi
-     if grep -q ^MYFILES $USERCONFIG; then
-         sed -e "s|^MYFILES=.*|MYFILES=\"$myfiles\"|" -i $USERCONFIG
-     else
-         echo "MYFILES=\"$myfiles\"" > $USERCONFIG
-     fi
-     if grep -q ^APPS_BASEDIR $USERCONFIG; then
-         sed -e "s|^APPS_BASEDIR=.*|APPS_BASEDIR=\"$apps_basedir\"|" -i $USERCONFIG
-     else
-         echo "APPS_BASEDIR=\"$apps_basedir\"" > $USERCONFIG
-     fi
-
-  # fixing ldap.conf to ignore self signed server certificate with queries from localhost
-  conffile=/etc/ldap/ldap.conf
-  if ! grep -q "TLS_REQCERT never" $conffile &> /dev/null; then
-   echo "Fixing $conffile ..."
-   cp $conffile ${conffile}.dpkg-old
-   echo "TLS_REQCERT never" >> $conffile
-  fi
-
-  # check for LINKDIRS variable, new in 0.9.16-1
-  if ! grep -q LINKDIRS $USERCONFIG; then
-   echo >> $USERCONFIG
-   echo "# directories in user's home, which will be linked to /tmp on logon" >> $USERCONFIG
-   echo "LINKDIRS=\"Desktop .kde .local\"" >> $USERCONFIG
-  fi
-
-  # remove obsolete /etc/gdm/PostLogin/Default
-  cfile=/etc/gdm/PostLogin/Default
-  if [ -e "$cfile" ]; then
-   if grep -q "# 11.07.2009" $cfile; then
-    mv $cfile ${cfile}.dpkg-old
-    chmod 644 ${cfile}.dpkg-old
-   fi
-  fi
-
-        # remove hal's obsolete mountpolicies
-  cfile=/etc/hal/fdi/policy/mountpolicies.fdi
-        if [ -e "$cfile" ]; then
-            mv $cfile ${cfile}.dpkg-old
-            [ -e /etc/init.d/dbus ] && /etc/init.d/dbus restart
+        # fixing ldap.conf to ignore self signed server certificate with queries from localhost
+        conffile=/etc/ldap/ldap.conf
+        if ! grep -q "TLS_REQCERT never" $conffile &> /dev/null; then
+            echo "Fixing $conffile ..."
+            cp $conffile ${conffile}.dpkg-old
+            echo "TLS_REQCERT never" >> $conffile
         fi
-
-        # remove ivman from Xsession.options
-  cfile=/etc/X11/Xsession.options
-        if [ -s "$cfile" ]; then
-            if grep -q use-session-ivman $cfile; then
-                cp $cfile ${cfile}.dpkg-old
-                grep -v use-session-ivman ${cfile}.dpkg-old > $cfile
-            fi
-        fi
-
-        # remove ivman's default
-  cfile=/etc/default/ivman
-        [ -e "$cfile" ] && mv $cfile ${cfile}.dpkg-old
-
-        # remove ivman script from dapper
-  cfile=/etc/X11/ivman-xsession
-        [ -e "$cfile" ] && mv $cfile ${cfile}.dpkg-old
 
         echo "Note: You have to reboot the client if you have installed the package for the first time!"
 
