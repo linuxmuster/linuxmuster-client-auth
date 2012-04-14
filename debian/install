@@ -1,2 +1,2 @@
 etc/*                                /etc/
-var/lib/linuxmuster-client/templates/*      /var/lib/linuxmuster-client/templates/
+var/lib/linuxmuster-client-auth/templates/*      /var/lib/linuxmuster-client-auth/templates/

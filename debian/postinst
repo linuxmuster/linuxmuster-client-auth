@@ -107,7 +107,7 @@ case "$1" in
 
         # patching configuration files
         echo "Patching configuration ..."
-        cd /var/lib/linuxmuster-client/templates
+        cd /var/lib/linuxmuster-client-auth/templates
             find -type f | xargs -i -t sh -c \
             "sed -e 's%@@basedn@@%${basedn}%g
                      s%@@administrator@@%${ADMINISTRATOR}%g

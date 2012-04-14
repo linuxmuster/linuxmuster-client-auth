@@ -1,8 +1,10 @@
-linuxmuster-client-auth (0.2precise1) testing; urgency=low
+linuxmuster-client-auth (0.2precise2) testing; urgency=low
 
   * Added ldap autoconfig option at boot time
+  * Added empty logon.d/logoff.d dirs
+  * moved templates to /var/lib/linuxmuster-client-auth/templates
 
- -- Frank Schiebel <frank@linuxmuster.net>  Fri, 13 Apr 2012 23:44:47 +0200
+ -- Frank Schiebel <frank@linuxmuster.net>  Sat, 14 Apr 2012 16:04:47 +0200
 
 linuxmuster-client-auth (0.1-precise8) testing; urgency=low
 

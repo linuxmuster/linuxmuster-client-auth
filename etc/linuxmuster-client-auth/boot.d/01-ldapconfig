@@ -11,7 +11,7 @@ if [ "x${AUTOCONFIGURE_LDAP}" != "xYES" ]; then
 fi
 
 DHCPLEASES="/var/lib/dhcp/dhclient.leases"
-TEMPLATESDIR="/var/lib/linuxmuster-client/templates"
+TEMPLATESDIR="/var/lib/linuxmuster-client-auth/templates"
 
 # throw away "old" leases
 rm ${DHCPLEASES}
