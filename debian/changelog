@@ -1,3 +1,10 @@
+linuxmuster-client-auth (0.2precise3) testing; urgency=low
+
+  * Moved configuration file to /etc/linuxmuster-client/auth, conf-dirs for all
+    packages to /etc/linuxmuster-client/<dirname>.d
+
+ -- Frank Schiebel <frank@linuxmuster.net>  Sun, 15 Apr 2012 15:15:40 +0200
+
 linuxmuster-client-auth (0.2precise2) testing; urgency=low
 
   * Added ldap autoconfig option at boot time

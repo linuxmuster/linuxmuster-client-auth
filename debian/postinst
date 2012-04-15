@@ -29,7 +29,7 @@ case "$1" in
     configure)
 
         # read default variables
-        . /etc/linuxmuster-client-auth/config || exit 1
+        . /etc/linuxmuster-client/auth/config || exit 1
 
         # check the distribution and do specific stuff
         binpath=bin

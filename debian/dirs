@@ -1,2 +1,2 @@
-/etc/linuxmuster-client-auth/logon.d
-/etc/linuxmuster-client-auth/logoff.d
+/etc/linuxmuster-client/logon.d
+/etc/linuxmuster-client/logoff.d

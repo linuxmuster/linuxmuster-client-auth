@@ -1,9 +1,9 @@
 # this script ist called at boot time from
-# /etc/linuxmuster-client-auth
+# /etc/init.d/linuxmuster-client-auth
 #
 
 # getting config
-. /etc/linuxmuster-client-auth/config
+. /etc/linuxmuster-client/auth/config
 
 if [ "x${AUTOCONFIGURE_LDAP}" != "xYES" ]; then
     echo "Info: Autoconfiguring of LDAP disabled"
