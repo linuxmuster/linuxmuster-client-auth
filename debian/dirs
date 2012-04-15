@@ -1,2 +1,4 @@
-/etc/linuxmuster-client/logon.d
-/etc/linuxmuster-client/logoff.d
+/etc/linuxmuster-client/pre-mount.d
+/etc/linuxmuster-client/post-mount.d
+/etc/linuxmuster-client/pre-umount.d
+/etc/linuxmuster-client/post-umount.d
