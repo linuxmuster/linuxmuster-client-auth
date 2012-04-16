@@ -13,6 +13,12 @@ fi
 DHCPLEASES="/var/lib/dhcp/dhclient.leases"
 TEMPLATESDIR="/var/lib/linuxmuster-client-auth/templates"
 
+# if no ldap.conf.fallback exists, assume, the existing /etc/ldap.conf is
+# working and save it as fallback
+if [ ! -f /etc/linuxmuster-client/auth/ldap.conf.fallback ]; then
+    cp /etc/ldap.conf /etc/linuxmuster-client/auth/ldap.conf.fallback
+fi
+
 # throw away "old" leases
 rm ${DHCPLEASES}
 # get new lease
@@ -46,5 +52,8 @@ if [ "x${basedn}" != "x" ] && [ "x${serverip}" != "x" ]; then
 
     echo "  done."
 else
-    echo "WARNING: Autoconfiguring LDAP FAILED! Leaving /etc/ldap.conf untouched."
+    echo "WARNING: Autoconfiguring LDAP FAILED! Copying /etc/linuxmuster-client/auth/ldap.conf.fallback to /etc/ldap.conf"
+    if [ -f /etc/linuxmuster-client/auth/ldap.conf.fallback ]; then
+        cp /etc/linuxmuster-client/auth/ldap.conf.fallback  /etc/ldap.conf
+    fi
 fi
