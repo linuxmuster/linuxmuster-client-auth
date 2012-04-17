@@ -1,12 +1,13 @@
-linuxmuster-client-auth (0.3-precise2) testing; urgency=low
+linuxmuster-client-auth (0.3-precise3) linuxmuster-client; urgency=low
 
   * Moved configuration file to /etc/linuxmuster-client/auth, conf-dirs for all
     packages to /etc/linuxmuster-client/<dirname>.d
   * changed directory layout for the /etc/linuxmuster-client/<dirname>.d dirs,
     switched to pre- and post-mount functionality
   * Added fallback functionality to boot.d/01-ldapconfig:
+  * changed suite name
 
- -- Frank Schiebel <frank@linuxmuster.net>  Mon, 16 Apr 2012 13:11:06 +0200
+ -- Frank Schiebel <frank@linuxmuster.net>  Tue, 17 Apr 2012 17:47:42 +0200
 
 linuxmuster-client-auth (0.2precise2) testing; urgency=low
 
