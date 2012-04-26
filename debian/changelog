@@ -3,8 +3,10 @@ linuxmuster-client-auth (0.5-precise1) linuxmuster-client; urgency=low
   * Modified ldap autoconfig to use DNS instead of DHCP
   * Patching host name at boot time
   * Moved init script to upstart, starting on net-dev-up
+  * Added hook in upstart-script to patch pam_mount config when shres package
+    is installed
 
- -- Frank Schiebel <frank@linuxmuster.net>  Mon, 23 Apr 2012 15:38:37 +0200
+ -- Frank Schiebel <frank@linuxmuster.net>  Thu, 26 Apr 2012 09:06:40 +0200
 
 linuxmuster-client-auth (0.3-precise3) linuxmuster-client; urgency=low
 
