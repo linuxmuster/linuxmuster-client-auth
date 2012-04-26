@@ -1,4 +1,4 @@
-linuxmuster-client-auth (0.5-precise2) linuxmuster-client; urgency=low
+linuxmuster-client-auth (0.5-precise3) linuxmuster-client; urgency=low
 
   * Modified ldap autoconfig to use DNS instead of DHCP
   * Patching host name at boot time
@@ -6,7 +6,7 @@ linuxmuster-client-auth (0.5-precise2) linuxmuster-client; urgency=low
   * Moved hooks back to /etc/linuxmuster-client/boot.d, upstart script now
     sources the files in there again
 
- -- Frank Schiebel <frank@linuxmuster.net>  Thu, 26 Apr 2012 09:36:31 +0200
+ -- Frank Schiebel <frank@linuxmuster.net>  Thu, 26 Apr 2012 12:06:26 +0200
 
 linuxmuster-client-auth (0.3-precise3) linuxmuster-client; urgency=low
 
