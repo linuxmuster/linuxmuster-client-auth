@@ -1,3 +1,10 @@
+linuxmuster-client-auth (0.5-trusty1) trusty-testing; urgency=low
+
+  * Setting version to trusty, creating git branch
+  * Replaced dependency for smbfs with cifs-utils
+
+ -- Frank Schiebel <frank@linuxmuster.net>  Sun, 02 Mar 2014 14:53:56 +0100
+
 linuxmuster-client-auth (0.5-precise5) linuxmuster-client; urgency=low
 
   * First documented package 
