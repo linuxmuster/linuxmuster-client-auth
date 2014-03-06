@@ -1,5 +1,12 @@
 linuxmuster-client-auth (0.5-trusty1) trusty-testing; urgency=low
 
+  * Updated template for pam.d/common-session to allow users to shutdown the
+    system
+
+ -- Frank Schiebel <frank@linuxmuster.net>  Thu, 06 Mar 2014 09:46:25 +0100
+
+linuxmuster-client-auth (0.5-trusty1) trusty-testing; urgency=low
+
   * Setting version to trusty, creating git branch
   * Replaced dependency for smbfs with cifs-utils
 
