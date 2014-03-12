@@ -1,3 +1,10 @@
+linuxmuster-client-auth (0.5-trusty2) trusty-testing; urgency=low
+
+  * Moved lightdm config in the templates from /etc/lightdm/lightdm.conf to
+    /etc/lightdm/lightdm.conf.d
+
+ -- Frank Schiebel <frank@linuxmuster.net>  Wed, 12 Mar 2014 17:43:06 +0100
+
 linuxmuster-client-auth (0.5-trusty1) trusty-testing; urgency=low
 
   * Updated template for pam.d/common-session to allow users to shutdown the
