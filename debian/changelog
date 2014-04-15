@@ -1,7 +1,8 @@
-linuxmuster-client-auth (0.5-trusty2) trusty-testing; urgency=low
+linuxmuster-client-auth (0.5-trusty2) trusty; urgency=low
 
   * Moved lightdm config in the templates from /etc/lightdm/lightdm.conf to
     /etc/lightdm/lightdm.conf.d
+  * Changed target repo to trusty
 
  -- Frank Schiebel <frank@linuxmuster.net>  Wed, 12 Mar 2014 17:43:06 +0100
 
