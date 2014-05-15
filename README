@@ -12,5 +12,6 @@ on the "Linux Musterlösung".
 
 Tested on
 
-  * Ubuntu 12.04LTS beta2
-  * Linux Mint 12 "Lisa" (based on ubuntu 11.10)
+  * Ubuntu 14.04 LTS
+ 
+Note: Not working on Ubuntu < 14.04!

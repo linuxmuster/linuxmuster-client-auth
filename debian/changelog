@@ -1,3 +1,11 @@
+linuxmuster-client-auth (0.5-trusty3) trusty; urgency=low
+
+  * Bugfix: Put /etc/lightdm/lightdm.conf.d in debian/dirs
+  * Bugfix: Update template for pam.d/common-pammount to not override
+    config files from linuxmuster-client-shares druring dist-upgrade.
+
+ -- Dominik Förderer <dominik-foerderer@windeck-gymnasium.de>  Thu, 15 May 2014 13:22:06 +0100
+
 linuxmuster-client-auth (0.5-trusty2) trusty; urgency=low
 
   * Moved lightdm config in the templates from /etc/lightdm/lightdm.conf to

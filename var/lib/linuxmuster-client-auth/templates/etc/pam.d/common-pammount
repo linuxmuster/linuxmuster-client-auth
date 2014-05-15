@@ -19,5 +19,5 @@
 # for configuration details about different login programs see
 # /usr/share/doc/libpam-mount/README.Debian.gz
 #
-# Diese Datei ist leer
-
+auth		required pam_mount.so
+session		optional pam_mount.so
