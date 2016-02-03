@@ -1,3 +1,39 @@
+linuxmuster-client-auth (0.5-xenial1) xenial-testing; urgency=low
+
+  * Testing Release for Ubuntu 16.04 Xenial Xerus
+
+ -- Dominik Förderer <dominik-foerderer@windeck-gymnasium.de>  Wed, 03 Feb 2016 11:40:06 +0100
+
+linuxmuster-client-auth (0.5-trusty3) trusty; urgency=low
+
+  * Bugfix: Put /etc/lightdm/lightdm.conf.d in debian/dirs
+  * Bugfix: Update template for pam.d/common-pammount to not override
+    config files from linuxmuster-client-shares druring dist-upgrade.
+
+ -- Dominik Förderer <dominik-foerderer@windeck-gymnasium.de>  Thu, 15 May 2014 13:22:06 +0100
+
+linuxmuster-client-auth (0.5-trusty2) trusty; urgency=low
+
+  * Moved lightdm config in the templates from /etc/lightdm/lightdm.conf to
+    /etc/lightdm/lightdm.conf.d
+  * Changed target repo to trusty
+
+ -- Frank Schiebel <frank@linuxmuster.net>  Wed, 12 Mar 2014 17:43:06 +0100
+
+linuxmuster-client-auth (0.5-trusty1) trusty-testing; urgency=low
+
+  * Updated template for pam.d/common-session to allow users to shutdown the
+    system
+
+ -- Frank Schiebel <frank@linuxmuster.net>  Thu, 06 Mar 2014 09:46:25 +0100
+
+linuxmuster-client-auth (0.5-trusty1) trusty-testing; urgency=low
+
+  * Setting version to trusty, creating git branch
+  * Replaced dependency for smbfs with cifs-utils
+
+ -- Frank Schiebel <frank@linuxmuster.net>  Sun, 02 Mar 2014 14:53:56 +0100
+
 linuxmuster-client-auth (0.5-precise5) linuxmuster-client; urgency=low
 
   * First documented package 
