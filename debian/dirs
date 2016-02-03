@@ -2,3 +2,4 @@
 /etc/linuxmuster-client/post-mount.d
 /etc/linuxmuster-client/pre-umount.d
 /etc/linuxmuster-client/post-umount.d
+/etc/lightdm/lightdm.conf.d
