@@ -2,7 +2,7 @@ linuxmuster-client-auth
 -----------------------
 
 This package enables an ubuntu client to auth against an ldap server
-on the "Linux Musterlösung".
+on the linuxmuster Server
 
   * The ldap users "pgmadmin" and "administrator" have
     administrative rights via sudo
