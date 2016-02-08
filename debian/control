@@ -10,5 +10,5 @@ Architecture: all
 Conflicts: linuxmuster-clientconfig, linuxmuster-base, ivman
 Replaces: ivman
 Depends: ${misc:Depends}, libpam-ldap, libnss-ldap, nscd, libpam-mount, rsync, cifs-utils
-Description: Linux-Musterloesung client configuration for auth only
+Description: Linuxmuster Client configuration for auth only
 
