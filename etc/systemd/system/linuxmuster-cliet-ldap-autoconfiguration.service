@@ -1,0 +1,11 @@
+[Unit]
+Description=linuxmuster-cliet-auth LDAP autoconfiguration
+Requires=networking.service
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/linuxmuster-client-hook
+
+[Install]
+WantedBy=multi-user.target
