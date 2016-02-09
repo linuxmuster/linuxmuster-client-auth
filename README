@@ -12,8 +12,6 @@ on the linuxmuster Server
 
 Tested on
 
-  * Ubuntu 14.04 Trusty Thar LTS
-  * Kubuntu 14.04 Trusty Thar LTS (with lightdm!)
-  * Ubuntu 16.04 Xenial Xerus Alpha 2
+  * Ubuntu > 15.04 with systemd
  
  only compatible with lightdm displaymanager!
