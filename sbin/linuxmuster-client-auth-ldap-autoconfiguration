@@ -1,0 +1,38 @@
+#!/bin/bash
+# linuxmuster-client-auth
+#
+# gets ldap configuration from dns
+
+    run_hook() {
+        local script="$1"
+        local exit_status
+        shift   # discard the first argument, then the rest are the script's
+
+        if [ -f $script ]; then
+            . $script "$@"
+        fi
+
+        if [ -n "$exit_status" ] && [ "$exit_status" -ne 0 ]; then
+            logger -p daemon.err "$script returned non-zero exit status $exit_status"
+            save_exit_status=$exit_status
+        fi
+
+        return $exit_status
+    }
+
+    run_hookdir() {
+        local dir="$1"
+        local exit_status
+        shift   # See run_hook
+
+        if [ -d "$dir" ]; then
+            for script in $(run-parts --list $dir); do
+                run_hook $script "$@" || true
+                exit_status=$?
+            done
+        fi
+
+        return $exit_status
+    }
+
+    run_hookdir /etc/linuxmuster-client/boot.d
