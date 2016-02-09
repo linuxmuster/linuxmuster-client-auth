@@ -1,2 +1,3 @@
 etc/*                                /etc/
 var/lib/linuxmuster-client-auth/templates/*      /var/lib/linuxmuster-client-auth/templates/
+sbin/*                              /usr/sbin
