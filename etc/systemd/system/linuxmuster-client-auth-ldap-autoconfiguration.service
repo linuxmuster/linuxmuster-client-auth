@@ -5,7 +5,8 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/sbin/linuxmuster-client-hook
+ExecStart=/usr/sbin/linuxmuster-client-auth-ldap-autoconfiguration
+
 
 [Install]
 WantedBy=multi-user.target
