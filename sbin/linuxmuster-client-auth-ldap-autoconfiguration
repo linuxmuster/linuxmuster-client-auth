@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # linuxmuster-client-auth
 #
 # gets ldap configuration from dns
