@@ -14,6 +14,6 @@ Tested on
 
   * Ubuntu 14.04 Trusty Thar LTS
   * Kubuntu 14.04 Trusty Thar LTS (with lightdm!)
-  * Ubuntu 16.04 Xenial Xerus Alpha 2
+  * Linux Mint 17
  
- only compatible with lightdm displaymanager!
+ only compatible with lightdm/mdm displaymanager!
