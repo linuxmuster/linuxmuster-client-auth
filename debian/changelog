@@ -1,3 +1,10 @@
+linuxmuster-client-auth (0.6-xenial1) xenial-testing; urgency=low
+
+  * Testing Release for Ubuntu 16.04 Xenial Xerus
+    upstart init scripts converted to systemd
+
+ -- Dominik Förderer <dominik-foerderer@windeck-gymnasium.de>  Thu, 09 Feb 2016 10:18:06 +0100
+ 
 linuxmuster-client-auth (0.5-xenial1) xenial-testing; urgency=low
 
   * Testing Release for Ubuntu 16.04 Xenial Xerus

@@ -1,14 +1,7 @@
+#!/bin/sh
 # linuxmuster-client-auth
 #
 # gets ldap configuration from dns
-
-description "linuxmuster-client-auth LDAP autoconfiguration"
-
-start on net-device-up
-
-task
-
-script
 
     run_hook() {
         local script="$1"
@@ -43,5 +36,3 @@ script
     }
 
     run_hookdir /etc/linuxmuster-client/boot.d
-
-end script

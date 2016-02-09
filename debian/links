@@ -1,1 +1,1 @@
-etc/init.d/linuxmuster-client-auth   etc/rc2.d/S10linuxmuster-client-auth
+etc/systemd/system/linuxmuster-client-auth-ldap-autoconfiguration.service     etc/systemd/system/multi-user.target.wants/linuxmuster-client-auth-ldap-autoconfiguration.service

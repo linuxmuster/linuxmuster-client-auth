@@ -12,8 +12,11 @@ on the linuxmuster Server
 
 Tested on
 
-  * Ubuntu 14.04 Trusty Thar LTS
-  * Kubuntu 14.04 Trusty Thar LTS (with lightdm!)
-  * Ubuntu 16.04 Xenial Xerus Alpha 2
+  * Ubuntu 16.04 Xenial Xerus Alpha2 
  
- only compatible with lightdm displaymanager!
+ Attention:
+  * requires systemd so it is incompatible with Ubuntu < 15.04 
+  * only compatible with lightdm/mdm displaymanager
+
+Remarks:
+ * should now also work stable in an subnetting environment 
