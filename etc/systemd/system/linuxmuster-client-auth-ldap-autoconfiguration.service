@@ -1,5 +1,5 @@
 [Unit]
-Description=linuxmuster-cliet-auth LDAP autoconfiguration
+Description=linuxmuster-client-auth LDAP autoconfiguration
 Requires=networking.service
 After=network-online.target
 
