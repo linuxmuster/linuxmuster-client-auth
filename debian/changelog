@@ -1,8 +1,9 @@
-linuxmuster-client-auth (0.5-xenial1) xenial-testing; urgency=low
+linuxmuster-client-auth (0.5-trusty4) trusty; urgency=low
 
-  * Testing Release for Ubuntu 16.04 Xenial Xerus
+  * Fix ldap autoconfig
+  * Fix for getting clientip in subnetting environments
 
- -- Dominik Förderer <dominik-foerderer@windeck-gymnasium.de>  Wed, 03 Feb 2016 11:40:06 +0100
+ -- Dominik Förderer <dominik-foerderer@windeck-gymnasium.de>  Thu, 11 Feb 2016 15:02:06 +0100
 
 linuxmuster-client-auth (0.5-trusty3) trusty; urgency=low
 
