@@ -1,3 +1,9 @@
+linuxmuster-client-auth (0.6-xenial2) xenial-testing; urgency=low
+
+  * Small improvment for getting serverip
+
+ -- Dominik Förderer <dominik-foerderer@windeck-gymnasium.de>  Thu, 11 Feb 2016 08:12:06 +0100
+ 
 linuxmuster-client-auth (0.6-xenial1) xenial-testing; urgency=low
 
   * Testing Release for Ubuntu 16.04 Xenial Xerus
