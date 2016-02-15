@@ -50,7 +50,9 @@ case "$1" in
         # configure package
         PRIORITY="critical"
         db_title "linuxmuster-client-auth Konfiguration"
-
+        
+        conffile1=/etc/linuxmuster-client/auth/config
+        
         # ldap server uri
         db_get ldap-auth-config/ldapns/ldap-server || true
         URI=$RET
@@ -59,7 +61,7 @@ case "$1" in
             | sed 's/.*_//' \
             | sed -n 's/\([0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\)/\1/p' \
             )
-        if [ -n "$IP" ]; then
+        if [ -n "$IP" ] || grep -q "NO" $conffile1 &> /dev/null; then
             db_set shared/ldapns/ldap-server $IP || true
         fi
         while [ -z "$IP_NEW" ]; do
@@ -76,8 +78,8 @@ case "$1" in
         # ldap basedn
         db_get ldap-auth-config/ldapns/base-dn || true
         BASEDN=$RET
-        if [ -n "$BASEDN" ]; then
-         db_set shared/ldapns/base-dn $BASEDN || true
+        if [ -n "$BASEDN" ] || grep -q "NO" $conffile1 &> /dev/null; then
+         db_set shared/lda pns/base-dn $BASEDN || true
         fi
         while [ -z "$BASEDN_NEW" ]; do
           db_input $PRIORITY shared/ldapns/base-dn || true
