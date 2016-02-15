@@ -123,14 +123,7 @@ case "$1" in
             echo "TLS_REQCERT never" >> $conffile
         fi
 
-        # dpkg-reconfigure if AUTOCONFIG_LDAP="NO"
-        conffile2=/etc/linuxmuster-client/auth/config
-        if grep -q "NO" $conffile2 &> /dev/null; then
-            echo "Ask for ldap Konfiguration"
-            dpkg-reconfigure linuxmuster-client-auth
-        fi
-
-        echo "Note: You have to reboot the client!"
+          echo "Note: You have to reboot the client!"
 
         ;;
 
