@@ -124,6 +124,7 @@ case "$1" in
         fi
 
         echo "Note: You have to reboot the client if you have installed the package for the first time!"
+        echo "Note: You have to run dpkg-reconfigure linuxmuster-client-auth if you have AUTOCONFIGURE_LDAP=NO in /etc/linuxmuster-client/auth/config"
 
         ;;
 
