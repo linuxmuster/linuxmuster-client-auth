@@ -1,3 +1,9 @@
+linuxmuster-client-auth (0.5-trusty5) trusty; urgency=low
+
+  * BugFix getting right fqsn
+
+ -- Dominik Förderer <dominik-foerderer@windeck-gymnasium.de>  Wed, 24 Feb 2016 08:08:06 +0100
+ 
 linuxmuster-client-auth (0.5-trusty4) trusty; urgency=low
 
   * Fix ldap autoconfig
