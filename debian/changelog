@@ -1,3 +1,9 @@
+linuxmuster-client-auth (0.6-xenial4) xenial-testing; urgency=low
+
+  * Trigger ask for ldap config if autoconfigure is no in debian/preinst
+
+ -- Dominik Förderer <dominik-foerderer@windeck-gymnasium.de>  Mon, 29 Feb 2016 12:18:06 +0100
+ 
 linuxmuster-client-auth (0.6-xenial3) xenial-testing; urgency=low
 
   * BugFix getting fqsn
