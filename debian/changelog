@@ -1,9 +1,15 @@
+linuxmuster-client-auth (0.5-trusty6) trusty; urgency=low
+
+ * Trigger ask for ldap config if autoconfigure is no in debian/preinst
+
+ -- Dominik Förderer <dominik-foerderer@windeck-gymnasium.de>  Mon, 29 Feb 2016 12:30:06 +0100
+
 linuxmuster-client-auth (0.5-trusty5) trusty; urgency=low
 
   * BugFix getting right fqsn
 
  -- Dominik Förderer <dominik-foerderer@windeck-gymnasium.de>  Wed, 24 Feb 2016 08:08:06 +0100
- 
+
 linuxmuster-client-auth (0.5-trusty4) trusty; urgency=low
 
   * Fix ldap autoconfig
