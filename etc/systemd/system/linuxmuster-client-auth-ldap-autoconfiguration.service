@@ -1,7 +1,7 @@
 [Unit]
 Description=linuxmuster-client-auth LDAP autoconfiguration
-Requires=networking.service
-After=network-online.target
+Requires=networking.service NetworkManager-wait-online.service
+After=networking.service NetworkManager-wait-online.service
 
 [Service]
 Type=oneshot
