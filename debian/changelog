@@ -1,3 +1,9 @@
+linuxmuster-client-auth (0.6-xenial5) xenial-testing; urgency=low
+
+  * Add NetworkManager-wait-online.service to requieries in Unit
+
+ -- Dominik Förderer <dominik-foerderer@windeck-gymnasium.de>  Fri, 18 Mar 2016 14:45:06 +0100
+ 
 linuxmuster-client-auth (0.6-xenial4) xenial-testing; urgency=low
 
   * Trigger ask for ldap config if autoconfigure is no in debian/preinst
