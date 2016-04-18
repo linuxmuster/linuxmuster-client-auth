@@ -1,4 +1,4 @@
-linuxmuster-client-auth (0.6-xenial6) xenial; urgency=low
+linuxmuster-client-auth (0.6-xenial7) xenial; urgency=low
 
   * Bugfix Release: Debconf crashed in first install
 
