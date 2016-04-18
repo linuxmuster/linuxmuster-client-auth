@@ -1,3 +1,9 @@
+linuxmuster-client-auth (0.5-trusty7) trusty; urgency=low
+
+ * Bugfix: Debconf error in an first install
+
+ -- Dominik Förderer <dominik-foerderer@windeck-gymnasium.de>  Mon, 18 Apr 2016 12:16:06 +0100
+ 
 linuxmuster-client-auth (0.5-trusty6) trusty; urgency=low
 
  * Trigger ask for ldap config if autoconfigure is no in debian/preinst
