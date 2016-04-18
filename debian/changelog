@@ -1,3 +1,9 @@
+linuxmuster-client-auth (0.6-xenial6) xenial-testing; urgency=low
+
+  * Bugfix Release: Debconf crashed in first install
+
+ -- Dominik Förderer <dominik-foerderer@windeck-gymnasium.de>  Mon, 18 Apr 2016 11:54:06 +0100
+ 
 linuxmuster-client-auth (0.6-xenial5) xenial-testing; urgency=low
 
   * Add NetworkManager-wait-online.service to requieries in Unit
